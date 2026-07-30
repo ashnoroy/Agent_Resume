@@ -56,7 +56,7 @@ def search_latest_news_jobs(query):
     agent = create_agent(
     model = model,
     tools = [search_latest_news_jobs])
-agent
+#agent
 
 def main_agent(agent, query):
     """This is main agent, or leader agent
