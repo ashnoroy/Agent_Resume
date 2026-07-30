@@ -17,6 +17,16 @@ warnings.filterwarnings("ignore")
 
 print("Module Loaded Successfully!!")
 
+# to show web app: complete page layout
+st.set_page_config(layout='wide')
+
+# to give title
+st.title('AI Resume Genrator')
+st.write("""This app helps user to build customized professional
+resume with latest job apply links""")
+
+st.image("bg.png")
+
 #STEP 1 API KEYS
 GOOGLE_API_KEY = "AQ.Ab8RN6ICEZ2i1U-QOratxr78cM2rpMpPuLWvOvv_hE-QXlhCLQ"
 GROQ_API_KEY = "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"
@@ -26,8 +36,8 @@ model = ChatGoogleGenerativeAI(
     model ='gemini-3.5-flash-lite',
     google_api_key = GOOGLE_API_KEY
 )
-response = model.invoke("Hello Buddy")
-response.content[-1]['text']
+#response = model.invoke("Hello Buddy")
+#response.content[-1]['text']
 
 def search_latest_news_jobs(query):
     """
@@ -106,9 +116,9 @@ user details: {query}"""
 
     return code
 
-code = main_agent(agent, "ALAN TURING, GEN AI EXPERT")
-from IPython.display import display as DISPLAY,HTML
-DISPLAY(HTML(code))
+#code = main_agent(agent, "ALAN TURING, GEN AI EXPERT")
+#from IPython.display import display as DISPLAY,HTML
+#DISPLAY(HTML(code))
 
 def get_jobs(
         agent,
@@ -141,4 +151,5 @@ Show atleast Top 10-20 results with direct apply link"""
 
     return code
 
-
+#code = (get_jobs(agent))
+#DISPLAY(HTML(code))
